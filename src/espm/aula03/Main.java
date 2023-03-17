@@ -14,10 +14,15 @@ public class Main {
         pf1.setNome("Humberto");
         pf1.setCpf("123.123.123-12");
 
+        PessoaFisica pf2 = new PessoaFisica("321", "Isabela", "534.654.345-23");
+
         PessoaJuridica pj1 = new PessoaJuridica();
         pj1.setId("312");
         pj1.setNome("Pizza Planet");
         pj1.setCnpj("12.123.123/0001-23");
+
+        System.out.println(pf1.getNome());
+        System.out.println(pj1.getNome());
 
         listaClientes.add(pf1);
         listaClientes.add(pj1);
