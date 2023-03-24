@@ -1,11 +1,15 @@
 package espm.aula03;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public abstract class Cliente {
 
     private String id;
     private String nome;
+
+    private List<Conta> contas = new ArrayList<>();
 
     public Cliente() {
 
@@ -35,6 +39,14 @@ public abstract class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<Conta> getContas() {
+        return contas;
+    }
+
+    public void setContas(List<Conta> contas) {
+        this.contas = contas;
     }
     
 }
