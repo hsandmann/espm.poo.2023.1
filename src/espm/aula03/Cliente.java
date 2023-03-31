@@ -1,6 +1,7 @@
 package espm.aula03;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -42,11 +43,11 @@ public abstract class Cliente {
     }
 
     public List<Conta> getContas() {
-        return contas;
+        return Collections.unmodifiableList(contas);
     }
 
-    public void setContas(List<Conta> contas) {
-        this.contas = contas;
+    public void addContas(Conta conta) {
+        this.contas.add(conta);
     }
     
 }

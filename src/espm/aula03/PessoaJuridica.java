@@ -16,5 +16,16 @@ public final class PessoaJuridica extends Cliente {
     public String getNome() {
         return super.getNome() + " LTDA";
     }
-    
+ 
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("{");
+        sb.append("\"id\": \"" + getId() + "\", ");
+        sb.append("\"nome\": \"" + getNome() + "\", ");
+        sb.append("\"cnpj\": \"" + getCnpj() + "\"");
+        sb.append("}");
+        return sb.toString();
+    }
+
 }

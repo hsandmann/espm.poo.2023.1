@@ -42,9 +42,12 @@ public class Terminal {
                     } else {
                         throw new RuntimeException("id do cliente inexistente: " + idCliente);
                     }
+                } else if (l.length() > 0) {
+                    throw new RuntimeException("Comando invalido: " + l);
                 }
 
             } catch(Exception e) {
+                System.err.println(e.getMessage());
                 e.printStackTrace();
             }
         } while (alive);
@@ -82,16 +85,16 @@ public class Terminal {
         return cliente;
     }
     
-    private static void listCustomers(Map<String, Cliente> clientes) {
-        clientes.forEach((id, cliente) -> {
-            String str = id + " -> " + cliente.getNome() + " (";
+    private static void listCustomers(Map<String, Cliente> mapa) {
+
+        mapa.forEach((id, cliente) -> {
+            StringBuffer sb = new StringBuffer();
             if (cliente instanceof PessoaFisica pf) {
-                str += pf.getCpf();
-            } else if (cliente instanceof PessoaJuridica pj) { // notação > Java 14
-                str += pj.getCnpj();
+                sb.append(pf.toString());
+            } else if (cliente instanceof PessoaJuridica pj) {
+                sb.append(pj.toString());
             }
-            str += ")";
-            System.out.println(str);
+            System.out.println(sb.toString());
         });
     }
 

@@ -20,5 +20,16 @@ public final class PessoaFisica extends Cliente {
     public String getCpf() {
         return cpf;
     }
+
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("{");
+        sb.append("\"id\": \"" + getId() + "\", ");
+        sb.append("\"nome\": \"" + getNome() + "\", ");
+        sb.append("\"cpf\": \"" + getCpf() + "\"");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
