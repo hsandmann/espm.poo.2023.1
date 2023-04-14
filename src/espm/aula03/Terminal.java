@@ -40,12 +40,14 @@ public class Terminal {
                     if (banco.getClientes().containsKey(idCliente)) {
                         atualCliente = banco.getClientes().get(idCliente);
                     } else {
-                        throw new RuntimeException("id do cliente inexistente: " + idCliente);
+                        throw new ESPMException("id do cliente inexistente: " + idCliente);
                     }
                 } else if (l.length() > 0) {
-                    throw new RuntimeException("Comando invalido: " + l);
+                    throw new ESPMException("Comando invalido: " + l);
                 }
 
+            } catch (ESPMException e) {
+                System.err.println("ESPM: " + e.getMessage());
             } catch(Exception e) {
                 System.err.println(e.getMessage());
                 e.printStackTrace();
@@ -55,7 +57,7 @@ public class Terminal {
         System.out.println("See you soon!");
     }
 
-    private static Cliente addCustomer() {
+    private static Cliente addCustomer() throws ESPMException {
         System.out.print("Novo Cliente [F/J]: ");
         Scanner s = new Scanner(System.in);
         String l = s.nextLine();
@@ -76,7 +78,7 @@ public class Terminal {
                 cliente = pj;
                 break;
             default:
-                throw new RuntimeException("Entrada de dado invalida: " + l);
+                throw new ESPMException("Entrada de dado invalida: " + l);
         }
         System.out.print("Nome: ");
         String nome = s.nextLine();
