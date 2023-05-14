@@ -6,8 +6,8 @@ SpringBoot
 --
 Backend - API
 
-> [espm.poo.2023.1.cotacao](https://hsandmann.github.io/espm.poo.2023.1.cotacao/)
+> [espm.poo.2023.1.cotacao](https://github.com/hsandmann/espm.poo.2023.1.cotacao/)
 
 Frontend - Web
 
-> [espm.poo.2023.1.web](https://hsandmann.github.io/espm.poo.2023.1.web/)
+> [espm.poo.2023.1.web](https://github.com/hsandmann/espm.poo.2023.1.web/)
