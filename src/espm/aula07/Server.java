@@ -18,7 +18,7 @@ public class Server {
             System.out.println("Servindo on port: " + portNumber);
 
             Socket cliente = server.accept();
-            System.out.println("Cliente conectado do IP " + cliente.getInetAddress().getHostAddress());
+            System.out.println("Cliente IP " + cliente.getInetAddress().getHostAddress() + ":" + cliente.getPort());
             BufferedReader bis = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
 
             String entrada = "";
